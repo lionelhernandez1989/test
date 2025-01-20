@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import {useEffect, useState} from "react";
-
-const uap = new UAParser();
+import {UAParser} from "ua-parser-js";
 
 export default function Home() {
   const [data , setdata] = useState("");
+
+  const uap = new UAParser();
 
   useEffect(() => {
     uap.getResult().withClientHints().then(res => {
